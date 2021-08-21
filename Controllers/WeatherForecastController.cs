@@ -36,5 +36,19 @@ namespace WebApplication3.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet("test")]
+        public IEnumerable<WeatherForecast> Get(string test)
+        {
+            var rng = new Random();
+            _logger.LogInformation("Page visited");
+            return Enumerable.Range(1, 2).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = rng.Next(-20, 55),
+                Summary = Summaries[rng.Next(Summaries.Length)]
+            })
+            .ToArray();
+        }
     }
 }
