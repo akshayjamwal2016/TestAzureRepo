@@ -12,4 +12,11 @@ namespace WebApplication3
 
         public string Summary { get; set; }
     }
+
+    public class Workout
+    {
+        public string Area { get; set; }
+        public string Exercise { get; set; }
+        public string Freequency { get; set; }
+    }
 }
